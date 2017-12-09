@@ -2,6 +2,8 @@ import os
 
 transFile = open("../data sets/transactions/transaction log.txt", "r")
 priceList = []
+linkList = []
+low = 0
 transName = transFile.readline()
 for file in os.listdir("../data sets/prices"):
 	file = file[:-4]
@@ -9,7 +11,13 @@ for file in os.listdir("../data sets/prices"):
 		print(transName)
 
 		priceFile = open("../data sets/prices/" + transName + ".txt")
-		for price in priceFile:
+		for item in priceFile:
+			parse = item.split(" ")
+			price = parse[0]
+			link = parse[1]
+			linkList.append(link)
 			priceList.append(int(price))
-			priceList.sort()
+		lowIndex = priceList.index(min(priceList))
+		lowLink = linkList[3]
+		print(lowLink)
 		print(priceList)
