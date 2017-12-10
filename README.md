@@ -1,2 +1,4 @@
-# Bank-Hack
-Repo for hackathon 
+# flaskr
+flask tutorial app
+
+Learning flask so I can develop my own web apps easily. 
