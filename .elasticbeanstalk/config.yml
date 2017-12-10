@@ -1,0 +1,22 @@
+branch-defaults:
+  master:
+    environment: null
+    group_suffix: null
+environment-defaults:
+  bank-env:
+    branch: master
+    repository: bank
+global:
+  application_name: bank-hack
+  branch: master
+  default_ec2_keyname: null
+  default_platform: python2.7
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: bank
+  sc: git
+  workspace_type: Application
