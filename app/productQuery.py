@@ -38,3 +38,6 @@ class ProductQuery:
 
     # return self.fullResults
     return self.results
+
+    if __name__ == '__main__':
+      main()

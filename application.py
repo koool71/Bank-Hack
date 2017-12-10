@@ -6,6 +6,8 @@ from contextlib import closing
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+dataFile = open("./app/test.txt", "r")
+
 app.config.update(dict(
 	DATABASE=os.path.join(app.root_path, 'bank.db'),
 	SECRET_KEY='development key',
@@ -47,7 +49,10 @@ def show_entries():
     db = get_db()
     cur = db.execute('select title, text from entries order by id desc')
     entries = cur.fetchall()
-    return render_template('layout.html', entries=entries)
+    return render_template('layout.html', 
+                            entries=entries,
+                            title="",
+                            data=dataFile.read())
 
 # @app.route('/add', methods=['POST'])
 # def add_entry():

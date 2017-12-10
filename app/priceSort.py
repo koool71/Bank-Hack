@@ -1,9 +1,15 @@
 import os, csv
 from productQuery import ProductQuery
 
+# class PriceSort():
+
+#   def __init__(self):
+#     self.pq = ProductQuery()
+
 pq = ProductQuery()
 
-#find transaction data
+  # def runQuery():
+    #find transaction data
 for file in os.listdir("../data sets/transactions"):
   transactionData = []
 
@@ -19,7 +25,9 @@ for file in os.listdir("../data sets/transactions"):
     
     queryResults = pq.autoQueryProduct(transactionName)
     print(queryResults)
-
+    theFile = open("test.txt", "w")
+    for item in queryResults:
+      theFile.write("%s\n" % item)
     # #find price data
     # for file in os.listdir("../data sets/prices"):
     #   priceData = []
