@@ -19,8 +19,23 @@ class ProductQuery:
     return results
 
   def autoQueryProduct(self,product):
+    self.results = []
     self.sem3.products_field("search", product)
 
-    results = self.sem3.get_products()
+    self.fullResults = self.sem3.get_products()
+    self.fullResults = self.fullResults["results"]
+    
+    for item in self.fullResults:
+      #get item name
+      self.results.append(item["name"])
+      self.siteDetailsResults = item["sitedetails"]
+      for siteDetailItem in self.siteDetailsResults:
+        self.latestOffersResults = siteDetailItem["latestoffers"]
+        for latestOffersItem in self.latestOffersResults:
+          self.results.append(latestOffersItem["seller"])
+          self.results.append(latestOffersItem["price"])
+        # print(self.latestOffersResults)
+      # self.results.append(self.moneyResults["price"])
 
-    return results
+    # return self.fullResults
+    return self.results

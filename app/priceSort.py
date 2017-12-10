@@ -40,14 +40,14 @@ for file in os.listdir("../data sets/transactions"):
         print(queryResults)
 
         #compare prices
-        for row in priceData:
-          price = row[0]
-          link = row[1]
-          linkList.append(link)
-          priceList.append(int(price))
-        lowIndex = priceList.index(min(priceList))
-        lowLink = linkList[3]
-        print(lowLink)
-        print(priceList)
+        # for row in priceData:
+        #   price = row[0]
+        #   link = row[1]
+        #   linkList.append(link)
+        #   priceList.append(int(price))
+        # lowIndex = priceList.index(min(priceList))
+        # lowLink = linkList[3]
+        # print(lowLink)
+        # print(priceList)
 
 # pq.queryProduct()
